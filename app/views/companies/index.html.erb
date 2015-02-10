@@ -1,1 +1,38 @@
-<h1 class= "page-header">Header </h1>
+<div class= "container">
+<h1 class= "page-header">Companies </h1>
+
+<table class= "table table-striped table-hover">
+  <thead>
+    <tr>
+      <th> Name </th>
+      <th> Suffix </th>
+      <th> Catch Phrase </th>
+      <th> Email </th>
+      <th> Start Date </th>
+      <th> Industry </th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @companies.each do |company| %>
+    <tr>
+      <td> <%= link_to company.name, company_path(company) %></td>
+      <td> <%= company.suffix %></td>
+      <td> <%= company.catch_phrase %></td>
+      <td> <%= company.email %></td>
+      <td> <%= company.start_date %></td>
+      <td> <%= company.industry %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+</div>
