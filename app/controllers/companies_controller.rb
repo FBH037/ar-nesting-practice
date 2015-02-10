@@ -5,6 +5,11 @@ class CompaniesController < ApplicationController
     @companies = Company.all
   end
 
+  def show
+   @locations = @company.locations
+   @products = @company.products 
+
+  end
 
   def new
     @company = Company.new
