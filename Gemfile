@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass', '~>3.3.1'
+
+gem 'sprockets'
+
 gem 'faker'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

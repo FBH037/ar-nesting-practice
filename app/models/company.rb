@@ -1,4 +1,4 @@
 class Company < ActiveRecord::Base
-  has_many :locations, dependant :destroy
-  has_many :products, dependant :destroy
+  has_many :locations, dependent: :destroy
+  has_many :products, dependent: :destroy
 end
