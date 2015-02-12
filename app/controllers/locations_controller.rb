@@ -3,11 +3,11 @@ class LocationsController < ApplicationController
   before_action :set_company
 
   def index
-    @locations = location.all
+    @locations = @company.locations
   end
 
   def show
-    @locations = @location.locations
+    @location = @company.location
   end
 
   def new
