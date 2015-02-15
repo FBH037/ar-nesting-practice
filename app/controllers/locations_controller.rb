@@ -2,13 +2,13 @@ class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :destroy, :update]
   before_action :set_company
   before_filter :authorize, except: [:index, :show]
-  
+
   def index
     @locations = @company.locations
   end
 
   def show
-    # @location = @company.location
+    # @location = @company.location  
   end
 
   def new
