@@ -1,13 +1,13 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :destroy, :update]
-
+  before_filter :authorize, except: [:index, :show]
   def index
     @companies = Company.all
   end
 
   def show
    @locations = @company.locations
-   @products = @company.products 
+   @products = @company.products
 
   end
 
@@ -28,7 +28,7 @@ class CompaniesController < ApplicationController
   end
 
   def update
-    if @company.update
+    if @company.update(company_params)
       redirect_to company_path(@company)
     else
       render :edit

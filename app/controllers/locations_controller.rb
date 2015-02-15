@@ -1,13 +1,14 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :destroy, :update]
   before_action :set_company
-
+  before_filter :authorize, except: [:index, :show]
+  
   def index
     @locations = @company.locations
   end
 
   def show
-    @location = @company.location
+    # @location = @company.location
   end
 
   def new
@@ -18,7 +19,7 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = location.new(location_params)
+    @location = Location.new(location_params)
     @location.company_id = params[:company_id]
     if @location.save
       redirect_to company_location_path(@company, @location)
@@ -45,7 +46,7 @@ class LocationsController < ApplicationController
   private
 
   def set_location
-    @location = location.find(params[:id])
+    @location = Location.find(params[:id])
   end
 
   def set_company

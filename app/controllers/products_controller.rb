@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :destroy, :update]
   before_action :set_company
+  before_filter :authorize, only: [:edit, :update]
+  
 
   def index
     @products = product.all
