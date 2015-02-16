@@ -1,3 +1,30 @@
-<h1 class= "page-header"> <%= "#{@company.name} Locations" %>
-
+<h1 class= "page-header">
+  <div class= "btn-toolbar container-fluid">
+  <%= "Company: #{@company.name}" %>
+      <%= link_to "Edit Location", edit_company_location_path(@company, @location), class: "btn btn-primary pull-right"%>
+      <%= link_to "Delete Location", company_location_path(@company, @location), class: "btn btn-danger pull-right" %>
+    </div>
 </h1>
+<h3 class= "container-fluid"> <%= "Location: #{@location.city}" %></h3>
+<div class= "container-fluid">
+<table class= "table table-striped">
+  <tbody >
+    <tr>
+      <td><b>Street:</b> <%= @location.street_name %>
+    </tr>
+    <tr>
+      <td><b>State:</b> <%= @location.state %>
+    </tr>
+    <tr>
+      <td>
+        <b>Zip Code:</b> <%= @location.zip_code %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Country:</b> <%= @location.country %>
+      </td>
+    </tr>
+  </tbody>
+      </table>
+</div>
