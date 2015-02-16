@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     end
   end
 
-get "/sign-up" => 'registrations#new', as: :signup
-post "/sign-up" => 'registrations#create'
+get "/sign-up" => 'users#new', as: :signup
+post "/sign-up" => 'users#create'
 get "/sign-in" => 'sessions#new', as: :signin
 post "/sign-in" => 'sessions#create'
 get "/sign-out" => 'sessions#destroy', as: :signout

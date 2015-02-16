@@ -8,7 +8,7 @@ class LocationsController < ApplicationController
   end
 
   def show
-    # @location = @company.location  
+    # @location = @company.location
   end
 
   def new
@@ -39,7 +39,7 @@ class LocationsController < ApplicationController
   def destroy
     @location.destroy
     if @location.destroy
-      redirect_to company_path(@company)
+      redirect_to companies_path
     end
   end
 

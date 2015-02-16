@@ -9,7 +9,16 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    redirect_to companies_path, alert: "Please Log In" if current_user.nil?
+    redirect_to companies_path, notice: "Please Log In" if current_user.nil?
   end
 
+  def flash_class(value)
+    case value
+    when 'notice' then "alert alert-info"
+    when 'success' then "alert alert-success"
+    when 'error' then "alert alert-error"
+    when 'alert' then "alert alert-error"
+    end
+  end
+  helper_method  :flash_class
 end

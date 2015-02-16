@@ -29,7 +29,7 @@ class CompaniesController < ApplicationController
 
   def update
     if @company.update(company_params)
-      redirect_to company_path(@company)
+      redirect_to company_path(@company), error: "Company was successfully updated"
     else
       render :edit
     end
